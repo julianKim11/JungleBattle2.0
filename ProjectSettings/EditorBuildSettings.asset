@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: e9b3972593fdfa2419f498ebe6881728
+  - enabled: 1
+    path: Assets/Scenes/PrimerMapa.unity
+    guid: 690ed7f43831a774d94f88c2de16b14d
+  - enabled: 1
+    path: Assets/Scenes/SegundoMapa.unity
+    guid: 019dd3457ecc84d4e92dd4eda3f1d692
+  m_configObjects: {}

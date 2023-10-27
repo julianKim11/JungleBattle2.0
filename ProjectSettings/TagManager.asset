@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - Player1
+  - Player2
+  - Items
+  - Timer
+  - GameManager
+  - Fly
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Entities1
+  - Entities2
+  - Items
+  - Floor
+  - Background
+  - Bird
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 1311231427
+    locked: 0
+  - name: Floor
+    uniqueID: 4260542705
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
