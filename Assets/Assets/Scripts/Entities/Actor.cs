@@ -8,6 +8,8 @@ public class Actor : MonoBehaviour, IDamageable
     public int MaxLife => _stats.MaxLife;
 
     public int CurentLife => _currentLife;
+
+    public int heal = 100;
     #endregion
 
     #region PRIVATE_PROPERTIES
@@ -27,6 +29,20 @@ public class Actor : MonoBehaviour, IDamageable
         {
             //GameManager.instance.AddEvents(_cmdDie);
             Die();
+        }
+    }
+
+    public void Heal()
+    {
+        SoundManager.Instance.PlaySound("Banana");
+        _currentLife += 100;
+        if ((_currentLife + heal) > MaxLife)
+        {
+            _currentLife = MaxLife;
+        }
+        else 
+        {
+            _currentLife += heal;
         }
     }
 }
