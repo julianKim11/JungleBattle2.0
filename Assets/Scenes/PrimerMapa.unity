@@ -346,13 +346,14 @@ GameObject:
   - component: {fileID: 201564458}
   - component: {fileID: 201564457}
   - component: {fileID: 201564456}
+  - component: {fileID: 201564459}
   m_Layer: 7
   m_Name: Player2
   m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &201564453
 Animator:
   serializedVersion: 3
@@ -445,7 +446,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 201564452}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e7183a78e56a8f46a4aeccf14cd8025, type: 3}
   m_Name: 
@@ -507,6 +508,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.52, y: 10.244999}
   m_EdgeRadius: 0
+--- !u!114 &201564459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201564452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23684fd6eb32c4e4093ecd3475b9795e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heal: 100
+  _stats: {fileID: 11400000, guid: 523fc60e33820294591c6adb1d692773, type: 2}
+  prefabBullet: {fileID: 3786950943869434678, guid: b57bd9e58e666e549b5582ab6f935a4b, type: 3}
+  shootPos: {fileID: 1205396765}
+  jumpForce: 9.5
+  jumpForceDamage: 0.01
+  _jump: 273
+  _moveLeft: 276
+  _moveRight: 275
+  _attack: 303
 --- !u!4 &204196512 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2549078244929031582, guid: f824db5d1f78b4149a9759120e8f99d0, type: 3}
@@ -1783,14 +1806,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heal: 100
   _stats: {fileID: 11400000, guid: 523fc60e33820294591c6adb1d692773, type: 2}
-  prefabBullet: {fileID: 3786950943869434678, guid: b57bd9e58e666e549b5582ab6f935a4b, type: 3}
+  prefabBullet: {fileID: 3622209411028809204, guid: 9c3afc54d3e5eb24f8727f1e194c2361, type: 3}
   shootPos: {fileID: 1640797484}
   jumpForce: 9.5
   jumpForceDamage: 0.01
   _jump: 119
   _moveLeft: 97
   _moveRight: 100
-  _attack: 323
+  _attack: 101
 --- !u!50 &800711771
 Rigidbody2D:
   serializedVersion: 4
@@ -5988,7 +6011,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1640797483}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.12, y: -0.64, z: 0}
+  m_LocalPosition: {x: 2.22, y: -0.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 800711769}
