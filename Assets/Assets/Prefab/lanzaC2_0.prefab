@@ -170,3 +170,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4096
   _myGameObject: {fileID: 3786950943869434678}
+  _character: {fileID: 0}

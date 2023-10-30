@@ -21,8 +21,6 @@ public class Weapon : MonoBehaviour, IWeapon
     private BulletFactory bulletFactory;
 
     #endregion
-
-    // Start is called before the first frame update
     void Start()
     {
         BasicBullet bullet = _weaponStats.Bullet.GetComponent<BasicBullet>();
@@ -35,8 +33,6 @@ public class Weapon : MonoBehaviour, IWeapon
         GameObject bulletObject = bullet.MyGameObject;
         bulletObject.transform.position = FirePoint.transform.position;
         bulletObject.transform.rotation = FirePoint.transform.rotation;
-        Destroy(bulletObject, 1f);
+        //Destroy(bulletObject, 1f);
     }
-
-
 }

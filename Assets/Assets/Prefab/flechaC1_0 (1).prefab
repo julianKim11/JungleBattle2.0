@@ -147,8 +147,9 @@ MonoBehaviour:
   _lifeTime: 15
   _hitteableLayer:
     serializedVersion: 2
-    m_Bits: 10240
+    m_Bits: 8192
   _myGameObject: {fileID: 3622209411028809204}
+  _character: {fileID: 0}
 --- !u!50 &3439653466331125151
 Rigidbody2D:
   serializedVersion: 4

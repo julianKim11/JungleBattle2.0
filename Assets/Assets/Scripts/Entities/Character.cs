@@ -2,36 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : Actor
+public class Character : Actor, IAttackable, IDamageable
 {
     #region PUBLIC_PROPERTIES
+    public KeyCode Attack => _attack;
+
     [SerializeField] public GameObject prefabBullet;
-    [SerializeField] Transform shootPos;
     [SerializeField] public float jumpForce = 9.5f;
     [SerializeField] public float jumpForceDamage = 0.01f;
-    public float MovementSpeed => _stats.MovementSpeed;
+    #endregion
+
+    #region PRIVATE_PROPERTIES
+    [SerializeField] private Transform shootPos;
+    [SerializeField] private UIManager _uiManager;
+    [SerializeField] private LifeBar _lifeBar;
     bool isJumping = false;
     Rigidbody2D rb2d;
-    Animator anim;
-
+    //Animator anim;
     #endregion
-
 
     #region KEY_BINDING
-    [SerializeField] private KeyCode _jump= KeyCode.W;
-    [SerializeField] private KeyCode _moveLeft = KeyCode.A;
-    [SerializeField] private KeyCode _moveRight = KeyCode.D;
+    [SerializeField] private KeyCode _attack = KeyCode.E;
 
-    [SerializeField] private KeyCode _attack = KeyCode.Mouse0;
     #endregion
-    // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
+        _currentLife = MaxLife;
+        _lifeBar.InitializeLifeBar(_currentLife);
     }
 
-    // Update is called once per frame
     void Update()
     {
         MovementControl();
@@ -48,7 +49,7 @@ public class Character : Actor
             //anim.SetBool("TakingDamage", false);
         }
     }
-
+    
     public void Shoot()
     {
         GameObject bullet = Instantiate(prefabBullet, shootPos.position, transform.rotation);
@@ -57,7 +58,7 @@ public class Character : Actor
 
     public void MovementControl()
     {
-        if (Input.GetKey(_moveRight))
+        if (Input.GetKey(MoveRight))
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
             transform.Translate(MovementSpeed * Time.deltaTime, 0, 0);
@@ -67,7 +68,7 @@ public class Character : Actor
         {
             //anim.SetBool("isWalking", false);
         }
-        if (Input.GetKey(_moveLeft))
+        if (Input.GetKey(MoveLeft))
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
             transform.Translate(MovementSpeed * Time.deltaTime, 0, 0);
@@ -77,7 +78,7 @@ public class Character : Actor
 
     public void JumpControl()
     {
-        if (Input.GetKey(_jump))
+        if (Input.GetKey(MoveUp))
         {
             if (!isJumping)
             {
@@ -95,33 +96,36 @@ public class Character : Actor
                 //}
                 //GameManager.Instance.enemyCountSpawn++;
             }
-
         }
     }
 
     public void AttackControl()
     {
-        if (Input.GetKeyDown(_attack))
+        if (Input.GetKeyDown(Attack))
         {
             Shoot();
            //SoundManager.Instance.PlaySound("Shoot");
            //anim.SetTrigger("RangeAttack");
         }
     }
-
     public override void Heal()
     {
-        
-        SoundManager.Instance.PlaySound("Banana");
-        _currentLife += 100;
-        if ((_currentLife + heal) > MaxLife)
-        {
-            _currentLife = MaxLife;
-        }
-        else
-        {
-            _currentLife += heal;
-        }
+        //SoundManager.Instance.PlaySound("Banana");
+        //_currentLife += 100;
+        //if ((_currentLife + heal) > MaxLife)
+        //{
+        //    _currentLife = MaxLife;
+        //}
+        //else
+        //{
+        //    _currentLife += heal;
+        //}
     }
-
+    public override void TakeDamage(int damage)
+    {
+        _currentLife -= damage;
+        _lifeBar.ChangeActualLife(_currentLife);
+        if (_currentLife <= 0)
+            Die();
+    }
 }
