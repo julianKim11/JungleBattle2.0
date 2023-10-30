@@ -51,7 +51,8 @@ public class Character : Actor
 
     public void Shoot()
     {
-        Instantiate(prefabBullet, shootPos.position, transform.rotation);
+        GameObject bullet = Instantiate(prefabBullet, shootPos.position, transform.rotation);
+        Destroy(bullet, 2f);
     }
 
     public void MovementControl()
@@ -76,21 +77,25 @@ public class Character : Actor
 
     public void JumpControl()
     {
-        if (Input.GetButtonDown("Jump") && !isJumping)
+        if (Input.GetKey(_jump))
         {
-            SoundManager.Instance.PlaySound("Jump");
-            rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            isJumping = true;
-            //anim.SetBool("isJumping", isJumping);
-            //if (GameManager.Instance.enemyCountSpawn == 2)
-            //{
-            //    GenerateEnemies?.Invoke(this, EventArgs.Empty);
-            //}
-            //else if (GameManager.Instance.enemyCountSpawn == 4)
-            //{
-            //    GenerateBox?.Invoke(this, EventArgs.Empty);
-            //}
-            //GameManager.Instance.enemyCountSpawn++;
+            if (!isJumping)
+            {
+                //SoundManager.Instance.PlaySound("Jump");
+                rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                isJumping = true;
+                //anim.SetBool("isJumping", isJumping);
+                //if (GameManager.Instance.enemyCountSpawn == 2)
+                //{
+                //    GenerateEnemies?.Invoke(this, EventArgs.Empty);
+                //}
+                //else if (GameManager.Instance.enemyCountSpawn == 4)
+                //{
+                //    GenerateBox?.Invoke(this, EventArgs.Empty);
+                //}
+                //GameManager.Instance.enemyCountSpawn++;
+            }
+
         }
     }
 
@@ -98,8 +103,9 @@ public class Character : Actor
     {
         if (Input.GetKeyDown(_attack))
         {
-            SoundManager.Instance.PlaySound("Shoot");
-            anim.SetTrigger("RangeAttack");
+            Shoot();
+           //SoundManager.Instance.PlaySound("Shoot");
+           //anim.SetTrigger("RangeAttack");
         }
     }
 

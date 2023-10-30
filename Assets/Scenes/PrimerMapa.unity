@@ -1676,6 +1676,7 @@ GameObject:
   - component: {fileID: 800711767}
   - component: {fileID: 800711772}
   - component: {fileID: 800711771}
+  - component: {fileID: 800711770}
   m_Layer: 6
   m_Name: Player1
   m_TagString: Player1
@@ -1768,6 +1769,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &800711770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800711766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23684fd6eb32c4e4093ecd3475b9795e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heal: 100
+  _stats: {fileID: 11400000, guid: 523fc60e33820294591c6adb1d692773, type: 2}
+  prefabBullet: {fileID: 3786950943869434678, guid: b57bd9e58e666e549b5582ab6f935a4b, type: 3}
+  shootPos: {fileID: 1640797484}
+  jumpForce: 9.5
+  jumpForceDamage: 0.01
+  _jump: 119
+  _moveLeft: 97
+  _moveRight: 100
+  _attack: 323
 --- !u!50 &800711771
 Rigidbody2D:
   serializedVersion: 4
