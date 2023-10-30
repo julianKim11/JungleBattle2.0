@@ -52,7 +52,7 @@ public class Character : Actor
     public void Shoot()
     {
         GameObject bullet = Instantiate(prefabBullet, shootPos.position, transform.rotation);
-        Destroy(bullet, 2f);
+        Destroy(bullet, 5f);
     }
 
     public void MovementControl()
@@ -106,6 +106,21 @@ public class Character : Actor
             Shoot();
            //SoundManager.Instance.PlaySound("Shoot");
            //anim.SetTrigger("RangeAttack");
+        }
+    }
+
+    public override void Heal()
+    {
+        
+        SoundManager.Instance.PlaySound("Banana");
+        _currentLife += 100;
+        if ((_currentLife + heal) > MaxLife)
+        {
+            _currentLife = MaxLife;
+        }
+        else
+        {
+            _currentLife += heal;
         }
     }
 

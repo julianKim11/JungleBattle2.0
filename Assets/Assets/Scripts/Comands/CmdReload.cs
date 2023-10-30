@@ -13,7 +13,7 @@ public class CmdReload : IComand
 
     public void Do()
     {
-        _weapon.Reload();
+        //_weapon.Reload();
     }
 
     public void UnDo()

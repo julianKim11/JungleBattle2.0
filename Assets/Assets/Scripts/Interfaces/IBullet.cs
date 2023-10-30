@@ -7,12 +7,10 @@ public interface IBullet : IProduct
     #region PROPERTIES
     float LifeTime { get; }
     LayerMask HitteableLayer { get; }
-    IWeapon Owner { get; }
     #endregion
 
     #region METHODS
     void Init();
-    void SetOwner(IWeapon owner);
-    void OnTriggerEnter(Collider other);
+    void OnTriggerEnter2D(Collider2D collision);
     #endregion
 }

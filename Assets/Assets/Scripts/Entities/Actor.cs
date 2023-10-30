@@ -15,7 +15,7 @@ public class Actor : MonoBehaviour, IDamageable
     #region PRIVATE_PROPERTIES
     [SerializeField] protected ActorStats _stats;
     private CmdDie _cmdDie;
-    private int _currentLife;
+    protected int _currentLife;
     #endregion
     public void Die()
     {
@@ -32,17 +32,8 @@ public class Actor : MonoBehaviour, IDamageable
         }
     }
 
-    public void Heal()
+    public virtual void Heal()
     {
-        SoundManager.Instance.PlaySound("Banana");
-        _currentLife += 100;
-        if ((_currentLife + heal) > MaxLife)
-        {
-            _currentLife = MaxLife;
-        }
-        else 
-        {
-            _currentLife += heal;
-        }
+       
     }
 }

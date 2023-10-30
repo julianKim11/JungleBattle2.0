@@ -8,9 +8,6 @@ public class WeaponStats : ScriptableObject
 {
     [field: SerializeField] public GameObject Bullet { get; private set; }
 
-
-    [field: SerializeField] public int MagSize { get; private set; } = 15;
-
     [field: SerializeField] public int Damage { get; private set; } = 10;
 
 }
