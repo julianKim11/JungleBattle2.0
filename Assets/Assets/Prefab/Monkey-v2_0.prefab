@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8784000241349659355}
   - component: {fileID: 8784000241349659354}
   - component: {fileID: -8433589390013855638}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Monkey-v2_0
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -165,14 +165,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 329dcd44ff85ece43986919b37f8aa8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vel: 1.5
+  _stats: {fileID: 11400000, guid: 8987dc6b67ad4a042bb0b3c2fa95f810, type: 2}
   rayCastDist: 1
   contacts:
     serializedVersion: 2
     m_Bits: 512
   rayPoint: {fileID: 8784000243116846828}
   life: 150
-  damage: 100
+  damage: 10
   jumpForceDamage: 2
 --- !u!1 &8784000243116846831
 GameObject:
@@ -183,7 +183,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8784000243116846828}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

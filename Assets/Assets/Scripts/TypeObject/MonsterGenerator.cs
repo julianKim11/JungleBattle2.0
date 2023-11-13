@@ -23,11 +23,9 @@ public class MonsterGenerator : MonoBehaviour
                 {
                     newEnemy.transform.position = WayPoints[j].transform.position;
                     WayPoints[j].isUsed = true;
+                    break;
                 }
-                else 
-                {
-                    return;
-                }
+              
             }
             currentEnemie.Add(newEnemy);
         }

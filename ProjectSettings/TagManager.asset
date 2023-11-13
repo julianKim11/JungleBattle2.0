@@ -15,11 +15,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
-  - Entities1
-  - Entities2
+  - 
+  - 
   - Items
   - Floor
   - Background

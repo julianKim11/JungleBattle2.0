@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicBullet : Actor, IBullet
+public class BasicBullet : BasicObject, IBullet
 {
     public float LifeTime => _lifeTime;
     public LayerMask HitteableLayer => _hitteableLayer;
