@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8784000241349659352}
   - component: {fileID: 8784000241349659355}
   - component: {fileID: 8784000241349659354}
+  - component: {fileID: -8433589390013855638}
   m_Layer: 0
   m_Name: Monkey-v2_0
   m_TagString: Enemy
@@ -152,6 +153,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9.19, y: 6.56}
   m_EdgeRadius: 0
+--- !u!114 &-8433589390013855638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8784000241349659332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 329dcd44ff85ece43986919b37f8aa8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vel: 1.5
+  rayCastDist: 1
+  contacts:
+    serializedVersion: 2
+    m_Bits: 512
+  rayPoint: {fileID: 8784000243116846828}
+  life: 150
+  damage: 100
+  jumpForceDamage: 2
 --- !u!1 &8784000243116846831
 GameObject:
   m_ObjectHideFlags: 0

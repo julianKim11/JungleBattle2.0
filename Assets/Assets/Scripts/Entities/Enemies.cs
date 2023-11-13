@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemies : MonoBehaviour
+public class Enemies : BasicObject
 {
     [SerializeField] float vel = 1.5f;
     [SerializeField] float rayCastDist = 1;
