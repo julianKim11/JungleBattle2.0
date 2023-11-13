@@ -5,8 +5,8 @@ using UnityEngine;
 public class MonsterGenerator : MonoBehaviour
 {
     #region Private properties
-    private List<Enemies> currentEnemie = new List<Enemies>();
-    [SerializeField] private List<Enemies> possibleEnemy;
+    private List<GameObject> currentEnemie = new List<GameObject>();
+    [SerializeField] private List<GameObject> possibleEnemy;
     [SerializeField] private List<WayPoint> WayPoints = new List<WayPoint>();
     [SerializeField] private int EnemyToCreate;
     #endregion
@@ -15,8 +15,8 @@ public class MonsterGenerator : MonoBehaviour
     {
         for (int i = 0; i < EnemyToCreate; i++)
         {
-         
-            Enemies newEnemy = CreateEnemy();
+
+            GameObject newEnemy = CreateEnemy();
             for (int j = 0; j < WayPoints.Count; j++)
             {
                 if (WayPoints[j].isUsed == false)
@@ -33,10 +33,10 @@ public class MonsterGenerator : MonoBehaviour
         }
     }
 
-    private Enemies CreateEnemy()
+    private GameObject CreateEnemy()
     {
         var EnemyIndex = Random.Range(0, possibleEnemy.Count); //crea un Enemy State de los que se encuentren en la lista
-        Enemies instantiatedMonster = Instantiate(possibleEnemy[EnemyIndex]);   
+        GameObject instantiatedMonster = Instantiate(possibleEnemy[EnemyIndex]);   
 
         return instantiatedMonster;
     }
