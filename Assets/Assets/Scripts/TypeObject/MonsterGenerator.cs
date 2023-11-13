@@ -17,6 +17,18 @@ public class MonsterGenerator : MonoBehaviour
         {
          
             Enemies newEnemy = CreateEnemy();
+            for (int j = 0; j < WayPoints.Count; j++)
+            {
+                if (WayPoints[j].isUsed == false)
+                {
+                    newEnemy.transform.position = WayPoints[j].transform.position;
+                    WayPoints[j].isUsed = true;
+                }
+                else 
+                {
+                    return;
+                }
+            }
             currentEnemie.Add(newEnemy);
         }
     }
@@ -25,15 +37,6 @@ public class MonsterGenerator : MonoBehaviour
     {
         var EnemyIndex = Random.Range(0, possibleEnemy.Count); //crea un Enemy State de los que se encuentren en la lista
         Enemies instantiatedMonster = Instantiate(possibleEnemy[EnemyIndex]);   
-
-        foreach (WayPoint spawnPoint in WayPoints)
-        {
-            if (spawnPoint.isUsed == false)
-            {
-                instantiatedMonster.transform.position = spawnPoint.WayPoints.transform.position;
-                spawnPoint.isUsed = true;
-            }
-        }
 
         return instantiatedMonster;
     }
