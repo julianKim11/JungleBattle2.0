@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Character : Actor, IAttackable, IDamageable
 {
     #region PUBLIC_PROPERTIES
     public KeyCode Attack => _attack;
+
+    public UnityEvent OnDead;
 
     [SerializeField] public GameObject prefabBullet;
     [SerializeField] public float jumpForce = 9.5f;
@@ -126,6 +129,9 @@ public class Character : Actor, IAttackable, IDamageable
         _currentLife -= damage;
         _lifeBar.ChangeActualLife(_currentLife);
         if (_currentLife <= 0)
+        {
             Die();
+            OnDead.Invoke();
+        }
     }
 }

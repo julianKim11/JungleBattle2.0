@@ -7,6 +7,7 @@ public class BasicBullet : Actor, IBullet
     public float LifeTime => _lifeTime;
     public LayerMask HitteableLayer => _hitteableLayer;
     public GameObject MyGameObject => _myGameObject;
+    [SerializeField] private int _damage;
 
     #region PRIVATE_PROPERTIES
     [SerializeField] private float _movementSpeed = 10f;
@@ -53,14 +54,14 @@ public class BasicBullet : Actor, IBullet
             {
                 Character _character = collision.GetComponent<Character>();
                 if (_character != null)
-                    _character.TakeDamage(10);
+                    _character.TakeDamage(_damage);
                 Destroy(gameObject);
             }
             if (collision.CompareTag("Player2"))
             {
                 Character _character = collision.GetComponent<Character>();
                 if (_character != null)
-                    _character.TakeDamage(10);
+                    _character.TakeDamage(_damage);
                 Destroy(gameObject);
             }
         }

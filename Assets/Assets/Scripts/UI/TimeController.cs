@@ -6,6 +6,7 @@ public class TimeController : MonoBehaviour
 {
     [SerializeField] int min, seg;
     [SerializeField] private TMP_Text _time;
+    [SerializeField] private GameManager _gameManager;
     private float _left;
     private bool _onGoing;
     private void Awake()
@@ -22,6 +23,8 @@ public class TimeController : MonoBehaviour
             {
                 Debug.Log("Empate");
                 _onGoing = false;
+                _gameManager._tie.SetActive(true);
+                _gameManager.PauseGame();
             }
             int tempMin = Mathf.FloorToInt(_left / 60);
             int tempSeg = Mathf.FloorToInt(_left % 60);
