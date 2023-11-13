@@ -22,16 +22,16 @@ public class Enemies : BasicObject
 
     private void FixedUpdate()
     {
-        
+
         rb2D.velocity = transform.right * MovementSpeed + new Vector3(0, rb2D.velocity.y, 0);
-        
+
 
     }
 
     private void Update()
     {
         EnemyMovement();
-        
+
     }
 
     public void EnemyMovement()
@@ -49,6 +49,7 @@ public class Enemies : BasicObject
         {
             collision.transform.gameObject.GetComponent<Character>().TakeDamage(damage);
         }
+       
         if (collision.transform.gameObject.layer == 13)
         {
             collision.transform.gameObject.GetComponent<Character>().TakeDamage(damage);

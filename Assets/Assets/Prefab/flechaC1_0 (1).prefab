@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6805550870057151720}
   - component: {fileID: -6814079739701091951}
   - component: {fileID: 3439653466331125151}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: flechaC1_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ MonoBehaviour:
   _lifeTime: 15
   _hitteableLayer:
     serializedVersion: 2
-    m_Bits: 8192
+    m_Bits: 8200
   _myGameObject: {fileID: 3622209411028809204}
   _character: {fileID: 0}
 --- !u!50 &3439653466331125151

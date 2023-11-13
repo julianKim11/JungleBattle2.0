@@ -64,6 +64,14 @@ public class BasicBullet : BasicObject, IBullet
                     _character.TakeDamage(_damage);
                 Destroy(gameObject);
             }
+            if (collision.CompareTag("Enemy"))
+            {
+                Enemies _enemies = collision.GetComponent<Enemies>();
+                if (_enemies != null)
+                    _enemies.TakeDamage(_damage);
+                Destroy(gameObject);
+            }
+
         }
     }
     public void Move() => transform.Translate(Vector2.right * _movementSpeed * Time.deltaTime);
