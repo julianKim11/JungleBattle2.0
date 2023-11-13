@@ -125,6 +125,7 @@ public class Character : Actor, IAttackable, IDamageable
     {
         _currentLife -= damage;
         _lifeBar.ChangeActualLife(_currentLife);
+        //UIManager.Instance.ChangeActualLife(_currentLife);
         if (_currentLife <= 0)
             Die();
     }

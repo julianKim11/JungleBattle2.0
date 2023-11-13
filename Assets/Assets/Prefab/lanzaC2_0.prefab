@@ -164,6 +164,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff4b614ca6925d40ba6844174583bcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _moveUp: 0
+  _moveLeft: 0
+  _moveRight: 0
+  _stats: {fileID: 0}
   _movementSpeed: 10
   _lifeTime: 5
   _hitteableLayer:
@@ -171,3 +175,4 @@ MonoBehaviour:
     m_Bits: 4096
   _myGameObject: {fileID: 3786950943869434678}
   _character: {fileID: 0}
+  _damage: 50

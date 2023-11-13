@@ -25,6 +25,9 @@ public class UIManager : MonoBehaviour
     #endregion
 
     #region METHODS
-    //public void ChangeActualLife() => _lifeBar.ChangeActualLife(currentLife);
+    //public void ChangeActualLife(int currentLife) 
+    //{
+    //    _lifeBar.ChangeActualLife(currentLife);
+    //}
     #endregion
 }

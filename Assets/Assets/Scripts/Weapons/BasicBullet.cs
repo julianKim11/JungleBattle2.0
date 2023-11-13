@@ -14,6 +14,7 @@ public class BasicBullet : Actor, IBullet
     [SerializeField] private LayerMask _hitteableLayer;
     [SerializeField] private GameObject _myGameObject;
     [SerializeField] private Character _character;
+    [SerializeField] private int _damage;
 
     private Collider2D _collider2D;
     private Rigidbody2D _rb2D;
@@ -53,14 +54,14 @@ public class BasicBullet : Actor, IBullet
             {
                 Character _character = collision.GetComponent<Character>();
                 if (_character != null)
-                    _character.TakeDamage(10);
+                    _character.TakeDamage(_damage);
                 Destroy(gameObject);
             }
             if (collision.CompareTag("Player2"))
             {
                 Character _character = collision.GetComponent<Character>();
                 if (_character != null)
-                    _character.TakeDamage(10);
+                    _character.TakeDamage(_damage);
                 Destroy(gameObject);
             }
         }
