@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: WeaponStatsPlayer1
   m_EditorClassIdentifier: 
   <Bullet>k__BackingField: {fileID: 3622209411028809204, guid: 9c3afc54d3e5eb24f8727f1e194c2361, type: 3}
-  <Damage>k__BackingField: 50
+  <Damage>k__BackingField: 10
