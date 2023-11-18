@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5940825d10b8717439459d170223fafa, type: 3}
   m_Name: ItemCura
   m_EditorClassIdentifier: 
-  <Damage>k__BackingField: 10
+  <Damage>k__BackingField: -20
   _stats:
     MovementSpeed: 0
