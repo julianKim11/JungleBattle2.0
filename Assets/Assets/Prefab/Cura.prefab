@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2980634831645992287}
   - component: {fileID: 2980634831645992286}
   - component: {fileID: 2980634831645992281}
+  - component: {fileID: 9062354294011769500}
   m_Layer: 0
   m_Name: Cura
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Sprite: {fileID: -9182177788924653191, guid: 8429f8f62c1659e42a262f26a4af6b2b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -115,3 +116,22 @@ MonoBehaviour:
   _itemStats: {fileID: 11400000, guid: 47697a9b4664db040b23db62f59397ad, type: 2}
   _canDamage: 1
   _canSlow: 0
+--- !u!95 &9062354294011769500
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2980634831645992280}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8b2e381d052a29d43affc0c6285392c1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
