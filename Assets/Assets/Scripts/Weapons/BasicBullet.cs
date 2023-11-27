@@ -7,8 +7,8 @@ public class BasicBullet : BasicObject, IBullet
     public float LifeTime => _lifeTime;
     public LayerMask HitteableLayer => _hitteableLayer;
     public GameObject MyGameObject => _myGameObject;
-    [SerializeField] public int _damage;
 
+    private int _damage;
     #region PRIVATE_PROPERTIES
     [SerializeField] private float _movementSpeed = 10f;
     [SerializeField] private float _lifeTime = 5f;
@@ -23,7 +23,8 @@ public class BasicBullet : BasicObject, IBullet
     void Start()
     {
         _collider2D = GetComponent<Collider2D>();
-        _rb2D = GetComponent<Rigidbody2D>();
+        //_rb2D = GetComponent<Rigidbody2D>();
+        _damage = _stats.Damage;
         Init();
     }
 
@@ -41,8 +42,8 @@ public class BasicBullet : BasicObject, IBullet
     public void Init()
     {
         _collider2D.isTrigger = true;
-        _rb2D.isKinematic = true;
-        _rb2D.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+        //_rb2D.isKinematic = true;
+        //_rb2D.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {

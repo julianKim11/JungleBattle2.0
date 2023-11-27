@@ -22,6 +22,10 @@ public class Bear : Enemies
             SpeedUp = 0;
         }
     }
+    public override void TakeDamage(int damage)
+    {
+        base.TakeDamage(damage);
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

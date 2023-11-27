@@ -33,9 +33,9 @@ public class Monkey : Enemies
     {
         Instantiate(EnemyBullet, ShootPos.position, ShootPos.rotation);
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(ShootPos.position, ShootPos.position + transform.right * LineDistance);
-    }
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawLine(ShootPos.position, ShootPos.position + transform.right * LineDistance);
+    //}
 }

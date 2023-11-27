@@ -261,7 +261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &555938997
 RectTransform:
   m_ObjectHideFlags: 0
@@ -601,9 +601,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1370079564}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: GoScene
+      - m_Target: {fileID: 1069737933}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -733,9 +733,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1370079564}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: Exit
+      - m_Target: {fileID: 1069737933}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -895,10 +895,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1069737928}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 989ab055e26d7e442b4037450f446c9a, type: 3}
+  m_Script: {fileID: 11500000, guid: bbfbf0a44b1268c4db1996b489a70c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: 88dbc25cf89feed4ebbbef0ecc63043a, type: 2}
+  _pause: 27
+  _gameManager: {fileID: 0}
 --- !u!1 &1139979014
 GameObject:
   m_ObjectHideFlags: 0
@@ -1524,49 +1525,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e2d43e7215710419ed233f76392d1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds:
-  - name: Jump
-    clip: {fileID: 8300000, guid: 562fd2222cfc336469ce896113f70007, type: 3}
-    volume: 0.3
-    pitch: 1.2
-    playOnAwake: 0
-    loop: 0
-    audioSource: {fileID: 1139979021}
-  - name: TakingDamage
-    clip: {fileID: 8300000, guid: 8e7d605f307a22848bad761e4690cb6c, type: 3}
-    volume: 0.1
-    pitch: 3
-    playOnAwake: 0
-    loop: 0
-    audioSource: {fileID: 1139979021}
-  - name: Banana
-    clip: {fileID: 8300000, guid: 28b0e7ced6e2d8842a123f00084657f2, type: 3}
-    volume: 0.5
-    pitch: 1.2
-    playOnAwake: 0
-    loop: 0
-    audioSource: {fileID: 1139979021}
-  - name: Shoot
-    clip: {fileID: 8300000, guid: 6286ba3968cb79d4abe702ce91c8f9db, type: 3}
-    volume: 0.1
-    pitch: 1.2
-    playOnAwake: 0
-    loop: 0
-    audioSource: {fileID: 1139979021}
-  - name: Music 1
-    clip: {fileID: 8300000, guid: fe50e0f4c5002f24387879031cddbcbb, type: 3}
-    volume: 1
-    pitch: 1.2
-    playOnAwake: 0
-    loop: 1
-    audioSource: {fileID: 1139979021}
-  - name: Music 2
-    clip: {fileID: 8300000, guid: 7da112a214fd9ca4591406194665b759, type: 3}
-    volume: 1
-    pitch: 1.2
-    playOnAwake: 0
-    loop: 1
-    audioSource: {fileID: 1139979021}
 --- !u!1 &1161377579
 GameObject:
   m_ObjectHideFlags: 0
@@ -1766,8 +1724,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab56beeecc94b0459372bf0d27d37f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu: {fileID: 1370079563}
-  mapSelection: {fileID: 1161377579}
 --- !u!4 &1370079565
 Transform:
   m_ObjectHideFlags: 0
@@ -2183,8 +2139,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab56beeecc94b0459372bf0d27d37f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu: {fileID: 0}
-  mapSelection: {fileID: 0}
 --- !u!1 &1889364669
 GameObject:
   m_ObjectHideFlags: 0

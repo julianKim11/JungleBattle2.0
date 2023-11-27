@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: BoxStats
   m_EditorClassIdentifier: 
   _stats:
-    MaxLife: 30
+    MaxLife: 140
     MovementSpeed: 0
+    Damage: 0

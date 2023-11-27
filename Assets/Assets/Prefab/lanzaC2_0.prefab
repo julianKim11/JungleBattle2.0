@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3786950943869434676}
   - component: {fileID: 3786950943869434677}
   - component: {fileID: 1310028914581721561}
-  - component: {fileID: -8635362044976169756}
   - component: {fileID: -7791815848291827051}
   m_Layer: 14
   m_Name: lanzaC2_0
@@ -131,27 +130,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9.02, y: 1.02}
   m_EdgeRadius: 0
---- !u!50 &-8635362044976169756
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3786950943869434678}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &-7791815848291827051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,8 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff4b614ca6925d40ba6844174583bcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stats: {fileID: 0}
-  _damage: 20
+  _stats: {fileID: 11400000, guid: 9f63c67a8bf08cb49a1966238eac1802, type: 2}
   _movementSpeed: 10
   _lifeTime: 5
   _hitteableLayer:

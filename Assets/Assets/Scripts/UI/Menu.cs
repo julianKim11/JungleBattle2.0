@@ -28,13 +28,13 @@ public class Menu : MonoBehaviour
     }
     public void Pause()
     {
-        _gameManager.PauseGame();
+        GameManager.Instance.PauseGame();
         _pauseGame = true;
         _gameManager._menuGameOver.SetActive(true);
     }
     public void Resume()
     {
-        _gameManager.ResumeGame();
+        GameManager.Instance.ResumeGame();
         _pauseGame = false;
         _gameManager._menuGameOver.SetActive(false);
     }
@@ -43,11 +43,15 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         _pauseGame = false;
-        _gameManager.ResumeGame();
+        GameManager.Instance.ResumeGame();
     }
     public void GoToMenu()
     {
         SceneManager.LoadScene(_menuScene);
+    }
+    public void Play()
+    {
+        SceneManager.LoadScene(1);
     }
     public void Quit()
     {

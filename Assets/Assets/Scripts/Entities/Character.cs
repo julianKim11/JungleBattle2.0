@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using UnityEngine.Events;
 
 public class Character : Actor, IAttackable, IDamageable
@@ -15,17 +16,20 @@ public class Character : Actor, IAttackable, IDamageable
     [SerializeField] public float jumpForceDamage = 0.01f;
     public int MinusSpeed;
     public int MoreSpeed;
+    public float TimeBetweenShoots;
+    public float TimeLastShoot;
     #endregion
 
     #region PRIVATE_PROPERTIES
+    [SerializeField] private LayerMask groundLayer;
     [SerializeField] private GameObject _playerOne;
     [SerializeField] private GameObject _playerTwo;
     [SerializeField] private Transform shootPos;
-    [SerializeField] private UIManager _uiManager;
+    [SerializeField] private Transform Check;
+    [SerializeField] private float _radio;
     [SerializeField] private LifeBar _lifeBar;
-    bool isJumping = false;
+    [SerializeField] bool isJumping = false;
     Rigidbody2D rb2d;
-    //Animator anim;
     #endregion
 
     #region KEY_BINDING
@@ -35,7 +39,6 @@ public class Character : Actor, IAttackable, IDamageable
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        //anim = GetComponent<Animator>();
         _currentLife = MaxLife;
         _lifeBar.InitializeLifeBar(_currentLife);
     }
@@ -46,17 +49,6 @@ public class Character : Actor, IAttackable, IDamageable
         JumpControl();
         AttackControl();
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == 9)
-        {
-            isJumping = false;
-            //anim.SetBool("isJumping", isJumping);
-            //anim.SetBool("TakingDamage", false);
-        }
-    }
-    
     public void Shoot()
     {
         GameObject bullet = Instantiate(prefabBullet, shootPos.position, transform.rotation);
@@ -69,55 +61,35 @@ public class Character : Actor, IAttackable, IDamageable
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
             transform.Translate((MovementSpeed - MinusSpeed + MoreSpeed) * Time.deltaTime, 0, 0);
-            //anim.SetBool("isWalking", true);
-        }
-        else
-        {
-            //anim.SetBool("isWalking", false);
         }
         if (Input.GetKey(MoveLeft))
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
             transform.Translate((MovementSpeed - MinusSpeed + MoreSpeed) * Time.deltaTime, 0, 0);
-            //anim.SetBool("isWalking", true);
         }
     }
 
     public void JumpControl()
     {
-        if (Input.GetKey(MoveUp))
+        if (Input.GetKeyDown(MoveUp) && isJumping)
         {
-            if (!isJumping)
-            {
-                //SoundManager.Instance.PlaySound("Jump");
-                rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-                isJumping = true;
-                //anim.SetBool("isJumping", isJumping);
-                //if (GameManager.Instance.enemyCountSpawn == 2)
-                //{
-                //    GenerateEnemies?.Invoke(this, EventArgs.Empty);
-                //}
-                //else if (GameManager.Instance.enemyCountSpawn == 4)
-                //{
-                //    GenerateBox?.Invoke(this, EventArgs.Empty);
-                //}
-                //GameManager.Instance.enemyCountSpawn++;
-            }
+            rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
+        isJumping = Physics2D.OverlapCircle(Check.position, _radio, groundLayer);
     }
-
     public void AttackControl()
     {
         if (Input.GetKeyDown(Attack))
         {
-            Shoot();
-           //SoundManager.Instance.PlaySound("Shoot");
-           //anim.SetTrigger("RangeAttack");
+            if(Time.time > TimeBetweenShoots + TimeLastShoot)
+            {
+                TimeLastShoot = Time.time;
+                Shoot();
+            }
         }
     }
     public override void Heal(int heal)
     {
-        //SoundManager.Instance.PlaySound("Banana");
         _currentLife += heal;
         if ((_currentLife + heal) > MaxLife)
         {

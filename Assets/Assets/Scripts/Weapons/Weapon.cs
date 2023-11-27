@@ -6,11 +6,8 @@ public class Weapon : MonoBehaviour, IWeapon
 {
     #region PUBLIC_PROPERTIES
     public WeaponStats WeaponStats => _weaponStats;
-
     public GameObject Bullet => _weaponStats.Bullet;
-
     public int Damage => _weaponStats.Damage;
-
     public static GameObject _firePoint { get; private set; }
     #endregion
     #region PRIVATE_PROPERTIES

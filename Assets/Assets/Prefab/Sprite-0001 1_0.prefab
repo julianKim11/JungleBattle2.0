@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5968324253021015250}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,9 +44,9 @@ GameObject:
   - component: {fileID: 5968324253139808629}
   - component: {fileID: 5968324253139808526}
   - component: {fileID: 5968324253139808521}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sprite-0001 1_0
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,6 +155,7 @@ MonoBehaviour:
     m_Bits: 512
   rayPoint: {fileID: 5968324253021015250}
   jumpForceDamage: 2
+  SpeedUp: 0
 --- !u!50 &5968324253139808526
 Rigidbody2D:
   serializedVersion: 4

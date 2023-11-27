@@ -5,11 +5,7 @@ using UnityEngine.UI;
 
 public class LifeBar : MonoBehaviour
 {
-    private Slider slider;
-    private void Start()
-    {
-        slider = GetComponent<Slider>();
-    }
+    [SerializeField] private Slider slider;
     #region METHODS
     public void ChangeMaxLife(float maxLife)
     {
