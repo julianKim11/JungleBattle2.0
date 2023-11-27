@@ -20,7 +20,6 @@ public class BasicBullet : BasicObject, IBullet
     private Rigidbody2D _rb2D;
     #endregion
 
-    // Start is called before the first frame update
     void Start()
     {
         _collider2D = GetComponent<Collider2D>();
@@ -28,7 +27,6 @@ public class BasicBullet : BasicObject, IBullet
         Init();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Move();

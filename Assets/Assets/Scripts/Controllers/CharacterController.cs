@@ -6,7 +6,6 @@ public class CharacterController : MonoBehaviour
 {
     public Character PlayerOne;
     public Character PlayerTwo;
-
     [SerializeField] private GameManager _gameManager;
 
     private void Start()
@@ -14,7 +13,6 @@ public class CharacterController : MonoBehaviour
         PlayerOne.OnDead.AddListener(PlayerOneDead);
         PlayerTwo.OnDead.AddListener(PlayerTwoDead);
     }
-
     private void PlayerOneDead()
     {
         _gameManager._playerTwoVictory.SetActive(true);

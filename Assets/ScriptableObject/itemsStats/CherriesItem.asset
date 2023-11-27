@@ -10,8 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5940825d10b8717439459d170223fafa, type: 3}
-  m_Name: ItemCura
+  m_Name: CherriesItem
   m_EditorClassIdentifier: 
-  <Damage>k__BackingField: -20
+  <Damage>k__BackingField: 0
+  <Heal>k__BackingField: 0
+  <MinusSpeed>k__BackingField: 0
+  <MoreSpeed>k__BackingField: 3
+  <PlusDamage>k__BackingField: 0
   _stats:
     MovementSpeed: 0

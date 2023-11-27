@@ -7,7 +7,6 @@ public class BasicObject : MonoBehaviour
     #region PUBLIC_PROPERTIES
     public int MaxLife => _stats.MaxLife;
     public int CurentLife => _currentLife;
-
     public float MovementSpeed => _stats.MovementSpeed;
     #endregion
 
@@ -23,7 +22,7 @@ public class BasicObject : MonoBehaviour
     public virtual void TakeDamage(int damage)
     {
     }
-    public virtual void Heal()
+    public virtual void Heal(int heal)
     {
     }
 }

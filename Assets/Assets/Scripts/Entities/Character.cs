@@ -13,9 +13,13 @@ public class Character : Actor, IAttackable, IDamageable
     [SerializeField] public GameObject prefabBullet;
     [SerializeField] public float jumpForce = 9.5f;
     [SerializeField] public float jumpForceDamage = 0.01f;
+    public int MinusSpeed;
+    public int MoreSpeed;
     #endregion
 
     #region PRIVATE_PROPERTIES
+    [SerializeField] private GameObject _playerOne;
+    [SerializeField] private GameObject _playerTwo;
     [SerializeField] private Transform shootPos;
     [SerializeField] private UIManager _uiManager;
     [SerializeField] private LifeBar _lifeBar;
@@ -64,7 +68,7 @@ public class Character : Actor, IAttackable, IDamageable
         if (Input.GetKey(MoveRight))
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
-            transform.Translate(MovementSpeed * Time.deltaTime, 0, 0);
+            transform.Translate((MovementSpeed - MinusSpeed + MoreSpeed) * Time.deltaTime, 0, 0);
             //anim.SetBool("isWalking", true);
         }
         else
@@ -74,7 +78,7 @@ public class Character : Actor, IAttackable, IDamageable
         if (Input.GetKey(MoveLeft))
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
-            transform.Translate(MovementSpeed * Time.deltaTime, 0, 0);
+            transform.Translate((MovementSpeed - MinusSpeed + MoreSpeed) * Time.deltaTime, 0, 0);
             //anim.SetBool("isWalking", true);
         }
     }
@@ -111,18 +115,19 @@ public class Character : Actor, IAttackable, IDamageable
            //anim.SetTrigger("RangeAttack");
         }
     }
-    public override void Heal()
+    public override void Heal(int heal)
     {
         //SoundManager.Instance.PlaySound("Banana");
-        //_currentLife += 100;
-        //if ((_currentLife + heal) > MaxLife)
-        //{
-        //    _currentLife = MaxLife;
-        //}
-        //else
-        //{
-        //    _currentLife += heal;
-        //}
+        _currentLife += heal;
+        if ((_currentLife + heal) > MaxLife)
+        {
+            _currentLife = MaxLife;
+        }
+        else
+        {
+            _currentLife += heal;
+        }
+        _lifeBar.ChangeActualLife(_currentLife);
     }
     public override void TakeDamage(int damage)
     {
@@ -133,5 +138,34 @@ public class Character : Actor, IAttackable, IDamageable
             Die();
             OnDead.Invoke();
         }
+    }
+    public void SendDamage(bool one, int damage)
+    {
+        if (one)
+        {
+            _playerTwo.GetComponent<Character>().TakeDamage(damage);
+        } else
+        {
+            _playerOne.GetComponent<Character>().TakeDamage(damage);
+        }
+    }
+    public void ChangeMinusSpeed(bool one, int speed)
+    {
+        if (one)
+        {
+            _playerTwo.GetComponent<Character>().SwitchMinusSpeed(speed);
+        }
+        else
+        {
+            _playerOne.GetComponent<Character>().SwitchMinusSpeed(speed);
+        }
+    }
+    public void ChangeMoreSpeed(int speed)
+    {
+        MoreSpeed = speed;
+    }
+    public void SwitchMinusSpeed(int speed)
+    {
+        MinusSpeed = speed;
     }
 }

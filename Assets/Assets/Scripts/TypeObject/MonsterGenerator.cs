@@ -5,17 +5,15 @@ using UnityEngine;
 public class MonsterGenerator : MonoBehaviour
 {
     #region Private properties
-    private List<GameObject> currentEnemie = new List<GameObject>();
+    private List<GameObject> currentEnemies = new List<GameObject>();
     [SerializeField] private List<GameObject> possibleEnemy;
     [SerializeField] private List<WayPoint> WayPoints = new List<WayPoint>();
     [SerializeField] private int EnemyToCreate;
     #endregion
-    // Start is called before the first frame update
     void Start()
     {
         for (int i = 0; i < EnemyToCreate; i++)
         {
-
             GameObject newEnemy = CreateEnemy();
             for (int j = 0; j < WayPoints.Count; j++)
             {
@@ -24,10 +22,9 @@ public class MonsterGenerator : MonoBehaviour
                     newEnemy.transform.position = WayPoints[j].transform.position;
                     WayPoints[j].isUsed = true;
                     break;
-                }
-              
+                } 
             }
-            currentEnemie.Add(newEnemy);
+            currentEnemies.Add(newEnemy);
         }
     }
 

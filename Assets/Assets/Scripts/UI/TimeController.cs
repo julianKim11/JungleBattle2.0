@@ -4,17 +4,18 @@ using UnityEngine;
 using TMPro;
 public class TimeController : MonoBehaviour
 {
-    [SerializeField] int min, seg;
+    public int min, seg;
+    public float _left;
+    public bool _onGoing;
+
     [SerializeField] private TMP_Text _time;
     [SerializeField] private GameManager _gameManager;
-    private float _left;
-    private bool _onGoing;
-    private void Awake()
+    public void Start()
     {
         _left = (min * 60) + seg;
         _onGoing = true;
     }
-    private void Update()
+    public void Update()
     {
         if (_onGoing)
         {
