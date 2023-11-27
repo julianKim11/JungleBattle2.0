@@ -10,7 +10,7 @@ public class BasicBullet : BasicObject, IBullet
 
     private int _damage;
     #region PRIVATE_PROPERTIES
-    [SerializeField] private float _movementSpeed = 10f;
+    private float _movementSpeed;
     [SerializeField] private float _lifeTime = 5f;
     [SerializeField] private LayerMask _hitteableLayer;
     [SerializeField] private GameObject _myGameObject;
@@ -25,6 +25,7 @@ public class BasicBullet : BasicObject, IBullet
         _collider2D = GetComponent<Collider2D>();
         //_rb2D = GetComponent<Rigidbody2D>();
         _damage = _stats.Damage;
+        _movementSpeed = _stats.MovementSpeed;
         Init();
     }
 

@@ -8,12 +8,10 @@ public class Menu : MonoBehaviour
     [SerializeField] private KeyCode _pause = KeyCode.Escape;
     [SerializeField] private GameManager _gameManager;
     private int _menuScene;
-    private int _jungleLevel;
     private bool _pauseGame;
     private void Start()
     {
         _menuScene = 0;
-        _jungleLevel = 1;
         _pauseGame = false;
     }
     private void Update()
@@ -48,10 +46,6 @@ public class Menu : MonoBehaviour
     public void GoToMenu()
     {
         SceneManager.LoadScene(_menuScene);
-    }
-    public void Play()
-    {
-        SceneManager.LoadScene(1);
     }
     public void Quit()
     {

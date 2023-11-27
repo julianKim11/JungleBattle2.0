@@ -26,9 +26,4 @@ public class Bear : Enemies
     {
         base.TakeDamage(damage);
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(FirstLine.position, FirstLine.position + transform.right * LineDistance);
-    }
 }

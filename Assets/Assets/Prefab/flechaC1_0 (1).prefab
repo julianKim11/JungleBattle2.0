@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stats: {fileID: 11400000, guid: 9f63c67a8bf08cb49a1966238eac1802, type: 2}
-  _movementSpeed: 10
+  _movementSpeed: 20
   _lifeTime: 15
   _hitteableLayer:
     serializedVersion: 2
