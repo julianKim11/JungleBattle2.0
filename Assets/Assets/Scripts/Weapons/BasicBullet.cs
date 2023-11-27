@@ -7,7 +7,7 @@ public class BasicBullet : BasicObject, IBullet
     public float LifeTime => _lifeTime;
     public LayerMask HitteableLayer => _hitteableLayer;
     public GameObject MyGameObject => _myGameObject;
-    [SerializeField] private int _damage;
+    [SerializeField] public int _damage;
 
     #region PRIVATE_PROPERTIES
     [SerializeField] private float _movementSpeed = 10f;
