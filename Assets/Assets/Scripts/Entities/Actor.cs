@@ -17,10 +17,7 @@ public class Actor : BasicObject, IMovable
     [SerializeField] protected KeyCode _moveRight;
     #endregion
 
- 
-
     #region METHODS
-  
     public virtual void Move(Vector3 direction)
     {
     }

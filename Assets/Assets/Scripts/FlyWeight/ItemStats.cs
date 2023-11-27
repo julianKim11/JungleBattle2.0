@@ -5,7 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ItemStats")]
 public class ItemStats : ScriptableObject
 {
-    [field: SerializeField] public int Damage { get; private set; } = 10;
+    [field: SerializeField] public int Damage { get; private set; }
+    [field: SerializeField] public int Heal { get; private set; }
+    [field: SerializeField] public int MinusSpeed { get; private set; }
+    [field: SerializeField] public int MoreSpeed { get; private set; }
+    [field: SerializeField] public int PlusDamage { get; private set; }
 
 
     [SerializeField] private ItemStatValues _stats;

@@ -10,7 +10,6 @@ public class ItemGenerator : MonoBehaviour
     [SerializeField] private List<WayPoint> WayPoints = new List<WayPoint>();
     [SerializeField] private int ItemToCreate;
     #endregion
-    // Start is called before the first frame update
     void Start()
     {
         for (int i = 0; i < ItemToCreate; i++)
@@ -33,9 +32,15 @@ public class ItemGenerator : MonoBehaviour
 
     private Item nexItem()
     {
+        if (possibleItem.Count == 0)
+        {
+            // No items left in the list
+            return null;
+        }
         var ItemIndex = Random.Range(0, possibleItem.Count);
+        
         Item instantiatedItem = Instantiate(possibleItem[ItemIndex]);
-
+        possibleItem.RemoveAt(ItemIndex);
         return instantiatedItem;
     }
 }

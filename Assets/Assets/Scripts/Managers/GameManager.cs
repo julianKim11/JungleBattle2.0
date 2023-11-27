@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject _tie;
     [SerializeField] public GameObject _playerOneVictory;
     [SerializeField] public GameObject _playerTwoVictory;
-
     public void PauseGame()
     {
         Time.timeScale = 0f;
