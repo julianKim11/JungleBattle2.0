@@ -11,6 +11,7 @@ TagManager:
   - Timer
   - GameManager
   - Fly
+  - Box
   layers:
   - Default
   - TransparentFX

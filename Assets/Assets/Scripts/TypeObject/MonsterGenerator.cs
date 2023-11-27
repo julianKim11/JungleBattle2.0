@@ -9,6 +9,7 @@ public class MonsterGenerator : MonoBehaviour
     [SerializeField] private List<GameObject> possibleEnemy;
     [SerializeField] private List<WayPoint> WayPoints = new List<WayPoint>();
     [SerializeField] private int EnemyToCreate;
+    private int enemyIndex = 0;
     #endregion
     void Start()
     {
@@ -25,14 +26,27 @@ public class MonsterGenerator : MonoBehaviour
                 } 
             }
             currentEnemies.Add(newEnemy);
+            if(i == 3 || i== 5 || i== 6)
+            {
+                enemyIndex++;
+            }
         }
     }
 
     private GameObject CreateEnemy()
     {
-        var EnemyIndex = Random.Range(0, possibleEnemy.Count); //crea un Enemy State de los que se encuentren en la lista
-        GameObject instantiatedMonster = Instantiate(possibleEnemy[EnemyIndex]);   
+        //var EnemyIndex = Random.Range(0, possibleEnemy.Count); //crea un Enemy State de los que se encuentren en la lista
+        //GameObject instantiatedMonster = Instantiate(possibleEnemy[EnemyIndex]);   
 
-        return instantiatedMonster;
+        //return instantiatedMonster;
+        if (enemyIndex < possibleEnemy.Count)
+        {
+            GameObject instantiatedMonster = Instantiate(possibleEnemy[enemyIndex]);
+            return instantiatedMonster;
+        }
+        else
+        {
+            return null;
+        }
     }
 }

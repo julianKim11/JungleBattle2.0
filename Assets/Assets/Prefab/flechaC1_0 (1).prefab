@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stats: {fileID: 0}
-  _damage: 50
+  _damage: 20
   _movementSpeed: 10
   _lifeTime: 15
   _hitteableLayer:

@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2980634831645992284}
   - component: {fileID: 2980634831645992287}
   - component: {fileID: 2980634831645992286}
-  - component: {fileID: 2980634831645992281}
   - component: {fileID: 9062354294011769500}
+  - component: {fileID: -1435185097498618614}
   m_Layer: 0
   m_Name: Banana(Cura)
   m_TagString: Untagged
@@ -101,21 +101,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &2980634831645992281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2980634831645992280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8bb8cc0e4852b9439ec1403c7e40dbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _itemStats: {fileID: 11400000, guid: 47697a9b4664db040b23db62f59397ad, type: 2}
-  _canDamage: 1
-  _canSlow: 0
 --- !u!95 &9062354294011769500
 Animator:
   serializedVersion: 3
@@ -135,3 +120,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-1435185097498618614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2980634831645992280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff4b614ca6925d40ba6844174583bcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stats: {fileID: 0}
+  _damage: 20
+  _movementSpeed: 10
+  _lifeTime: 5
+  _hitteableLayer:
+    serializedVersion: 2
+    m_Bits: 12288
+  _myGameObject: {fileID: 2980634831645992280}
+  _character: {fileID: 0}

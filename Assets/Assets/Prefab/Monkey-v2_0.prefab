@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &389350237
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 389350238}
+  m_Layer: 3
+  m_Name: ShootPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &389350238
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389350237}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8784000241349659358}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8784000241349659332
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,7 +43,7 @@ GameObject:
   - component: {fileID: 8784000241349659352}
   - component: {fileID: 8784000241349659355}
   - component: {fileID: 8784000241349659354}
-  - component: {fileID: -8433589390013855638}
+  - component: {fileID: 740512833}
   m_Layer: 3
   m_Name: Monkey-v2_0
   m_TagString: Enemy
@@ -33,6 +63,7 @@ Transform:
   m_LocalScale: {x: 0.23898867, y: 0.23898867, z: 0.23898867}
   m_Children:
   - {fileID: 8784000243116846828}
+  - {fileID: 389350238}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -153,7 +184,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9.19, y: 6.56}
   m_EdgeRadius: 0
---- !u!114 &-8433589390013855638
+--- !u!114 &740512833
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,18 +193,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 8784000241349659332}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 329dcd44ff85ece43986919b37f8aa8c, type: 3}
+  m_Script: {fileID: 11500000, guid: 33efe600279d6ec449072951995d1608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stats: {fileID: 11400000, guid: 8987dc6b67ad4a042bb0b3c2fa95f810, type: 2}
+  _stats: {fileID: 11400000, guid: 50d9355716ede814fb8c733b4c2791b4, type: 2}
   rayCastDist: 1
   contacts:
     serializedVersion: 2
     m_Bits: 512
   rayPoint: {fileID: 8784000243116846828}
-  life: 150
-  damage: 10
   jumpForceDamage: 2
+  ShootPos: {fileID: 389350238}
+  LineDistance: 8
+  Player:
+    serializedVersion: 2
+    m_Bits: 12288
+  PlayerInRange: 0
+  EnemyBullet: {fileID: 2980634831645992280, guid: 4229acdf6fd95484597b9246ecf09a42, type: 3}
+  TimeBetweenShoots: 3
+  TimeLastShoot: 0
+  CooldownShoot: 0
 --- !u!1 &8784000243116846831
 GameObject:
   m_ObjectHideFlags: 0

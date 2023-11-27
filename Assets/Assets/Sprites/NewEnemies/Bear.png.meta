@@ -142,10 +142,10 @@ TextureImporter:
       name: Bear_1
       rect:
         serializedVersion: 2
-        x: 66
+        x: 73
         y: 1
-        width: 58
-        height: 31
+        width: 53
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,7 +163,7 @@ TextureImporter:
       name: Bear_2
       rect:
         serializedVersion: 2
-        x: 130
+        x: 137
         y: 4
         width: 53
         height: 28
@@ -184,10 +184,10 @@ TextureImporter:
       name: Bear_3
       rect:
         serializedVersion: 2
-        x: 194
+        x: 196
         y: 1
-        width: 53
-        height: 30
+        width: 58
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

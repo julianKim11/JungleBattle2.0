@@ -9,7 +9,6 @@ public class Item : MonoBehaviour
     [SerializeField] private bool _canHeal = false;
     [SerializeField] private bool _canSlow = false;
     [SerializeField] private bool _canSpeedUp = false;
-    [SerializeField] private bool _canDamageUp = false;
     private int _damage => _itemStats.Damage;
     private int _heal => _itemStats.Heal;
     private int _movementSpeed => _itemStats.MinusSpeed;
