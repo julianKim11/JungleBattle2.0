@@ -45,6 +45,7 @@ public class Menu : MonoBehaviour
     }
     public void GoToMenu()
     {
+        GameManager.Instance.ResumeGame();
         SceneManager.LoadScene(_menuScene);
     }
     public void Quit()
